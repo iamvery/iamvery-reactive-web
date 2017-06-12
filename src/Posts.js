@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import postsData from './PostsData.js'
+import fetchPostsData from './PostsData.js'
 
 class Posts extends Component {
   state = {
@@ -7,7 +7,7 @@ class Posts extends Component {
   };
 
   componentDidMount() {
-    postsData.then((posts) => this.setState({posts, loaded: true}))
+    fetchPostsData().then((posts) => this.setState({posts, loaded: true}))
   }
 
   renderPost = (post, index) => <li key={index}><a href={post.link}>{post.title}</a></li>;
