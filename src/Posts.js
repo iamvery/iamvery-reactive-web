@@ -11,7 +11,11 @@ class Posts extends Component {
     this.setState({posts, loaded: true});
   }
 
-  renderPost = (post, index) => <li key={index}><a href={post.link}>{post.title}</a></li>;
+  renderPost = (post, index) => (
+    <li key={index}>
+      <a href={post.link}>{post.title}</a>
+    </li>
+  );
 
   render() {
     if (this.state.loaded) {
