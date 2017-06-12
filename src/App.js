@@ -6,7 +6,7 @@ class Posts extends Component {
     loaded: false,
   };
 
-  renderPost = (post, index) => <li key={index}>{post.title}</li>;
+  renderPost = (post, index) => <li key={index}><a href={post.link}>{post.title}</a></li>;
 
   componentDidMount() {
     fetch('https://gist.githubusercontent.com/iamvery/a46ba7af5cf5e017c6865bc8455ca05a/raw/60fae242a4d531a767c154f1d5d07560103e6e09/feed.json')
