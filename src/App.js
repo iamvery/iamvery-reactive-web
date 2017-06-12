@@ -3,17 +3,23 @@ import './App.css';
 
 class Posts extends Component {
   state = {
-    posts: [{title: 'First Post!'}],
+    loaded: false,
   };
 
   renderPost = (post, index) => <li key={index}>{post.title}</li>;
 
   render() {
-    return (
-      <ul>
-        {this.state.posts.map(this.renderPost)}
-      </ul>
-    );
+    if (this.state.loaded) {
+      return (
+        <ul>
+          {this.state.posts.map(this.renderPost)}
+        </ul>
+      );
+    } else {
+      return (
+        <div>Loading...</div>
+      );
+    }
   }
 }
 
