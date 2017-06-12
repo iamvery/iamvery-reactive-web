@@ -6,8 +6,9 @@ class Posts extends Component {
     loaded: false,
   };
 
-  componentDidMount() {
-    fetchPostsData().then((posts) => this.setState({posts, loaded: true}))
+  async componentDidMount() {
+    const posts = await fetchPostsData();
+    this.setState({posts, loaded: true});
   }
 
   renderPost = (post, index) => <li key={index}><a href={post.link}>{post.title}</a></li>;
