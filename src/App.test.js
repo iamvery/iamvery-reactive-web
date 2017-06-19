@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { render } from 'enzyme';
 import renderer from 'react-test-renderer';
 import App from './App';
 
@@ -10,8 +10,9 @@ it('renders without crashing', () => {
 });
 
 it('greets the world with a hello', () => {
-  const app = shallow(<App />);
-  expect(app.text()).toEqual('Hello, World!');
+  const app = render(<App />);
+  expect(app.text()).toContain('First!');
+  expect(app.text()).toContain('Another!');
 });
 
 it('does not change unexpectedly', () => {

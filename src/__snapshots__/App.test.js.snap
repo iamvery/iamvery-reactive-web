@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`does not change unexpectedly 1`] = `
-<div>
-  Hello, World!
-</div>
+<ul>
+  <li>
+    First!
+  </li>
+  <li>
+    Another!
+  </li>
+</ul>
 `;
