@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from 'enzyme';
+import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import App from './App';
 
@@ -9,10 +9,19 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it('loads', () => {
-  const app = render(<App />);
+it('loads and displays posts', async () => {
+  const data = Promise.resolve(['First!', 'Another!']);
+  const fakeFetch = () => data;
+
+  const app = mount(<App fetchPosts={fakeFetch} />);
 
   expect(app.text()).toContain('Loading');
+
+  await data;
+  app.update();
+
+  expect(app.text()).toContain('First!');
+  expect(app.text()).toContain('Another!');
 });
 
 it.skip('does not change unexpectedly', () => {

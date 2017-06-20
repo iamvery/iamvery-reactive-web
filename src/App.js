@@ -5,10 +5,15 @@ import './App.css';
 class App extends Component {
   state = { loaded: false }
 
+  async componentDidMount() {
+    const data = await this.props.fetchPosts();
+    this.setState({ data, loaded: true });
+  }
+
   render() {
     if (this.state.loaded) {
       return (
-        <Posts data={['First!', 'Another!']} />
+        <Posts data={this.state.data} />
       );
     } else {
       return (
