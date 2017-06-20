@@ -24,7 +24,7 @@ it('loads and displays posts', async () => {
   expect(app.text()).toContain('Another!');
 });
 
-it.skip('does not change unexpectedly', () => {
+it('does not change unexpectedly', () => {
   const app = renderer.create(<App />);
   let tree = app.toJSON();
   expect(tree).toMatchSnapshot();
