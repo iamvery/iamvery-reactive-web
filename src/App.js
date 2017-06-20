@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Posts from './Posts';
+import fetchPosts from './PostsData';
 import './App.css';
 
 class App extends Component {
+  static defaultProps = { fetchPosts }
   state = { loaded: false }
 
   async componentDidMount() {
