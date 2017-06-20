@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not change unexpectedly 1`] = `
+<ul>
+  <li>
+    one
+  </li>
+  <li>
+    two
+  </li>
+</ul>
+`;
