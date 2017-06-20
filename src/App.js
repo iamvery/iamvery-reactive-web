@@ -3,10 +3,18 @@ import Posts from './Posts';
 import './App.css';
 
 class App extends Component {
+  state = { loaded: false }
+
   render() {
-    return (
-      <Posts data={['First!', 'Another!']} />
-    );
+    if (this.state.loaded) {
+      return (
+        <Posts data={['First!', 'Another!']} />
+      );
+    } else {
+      return (
+        <span>Loading...</span>
+      );
+    }
   }
 }
 

@@ -9,10 +9,10 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it('greets the world with a hello', () => {
+it('loads', () => {
   const app = render(<App />);
-  expect(app.text()).toContain('First!');
-  expect(app.text()).toContain('Another!');
+
+  expect(app.text()).toContain('Loading');
 });
 
 it.skip('does not change unexpectedly', () => {
